@@ -39,15 +39,15 @@ namespace BichinhoVirtual.View
             Console.WriteLine("\n--- DIGITE O NÚMERO DA OPÇÃO DESEJADA: ---");
         }
 
-        public void MenuAdocao(Pokemons especies)
+        public void MenuAdocao(Mascotes especies)
         {
             Console.Clear();
             Console.WriteLine($"\n--- {nomeDoJogador}, ADOTE UM BICHINHO VIRTUAL! ---\n");
             Console.WriteLine("--- LISTA DE ESPÉCIES DISPONÍVEIS: ---");
             //Listando espécies
-            foreach (Pokemon pokemon in especies.results)
+            foreach (Mascote mascote in especies.results)
             {
-                Console.WriteLine(pokemon.name.ToUpper());
+                Console.WriteLine(mascote.name.ToUpper());
             }
 
             Console.WriteLine("\n--- ESCREVA O NOME DA ESPÉCIE DO SEU INTERESSE: ---");
@@ -63,7 +63,7 @@ namespace BichinhoVirtual.View
             Console.WriteLine("\n--- DIGITE O NÚMERO DA OPÇÃO DESEJADA: ---");
         }
 
-        public void ExibirDetalhesMascote(string especieMascote, Pokemon pokemon)
+        public void ExibirDetalhesMascote(string especieMascote, Mascote pokemon)
         {
             Console.Clear();
             Console.WriteLine($"--- DETALHES DO POKEMON {especieMascote} ---");
@@ -85,7 +85,17 @@ namespace BichinhoVirtual.View
         {
             Console.Clear();
             Console.WriteLine("--- MASCOTE ADOTADO COM SUCESSO, O OVO ESTÁ CHOCANDO! ---");
-            Console.WriteLine();
+            Console.WriteLine(@"
+                           *****
+                         *********
+                        ***********
+                       *************
+                       *************
+                        ***********
+                         *********
+                           *****
+");
+            Console.WriteLine("\n--- APERTE ENTER PARA VOLTAR AO MENU ANTERIOR ---");
         }
 
         public void OpcaoInvalida(string opcao)

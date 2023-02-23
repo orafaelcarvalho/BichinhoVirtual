@@ -1,6 +1,6 @@
 ﻿namespace BichinhoVirtual.Model
 {
-    public class Pokemon
+    public class Mascote
     {
         public List<Abilities> abilities { get; set; }
         public double height { get; set; }
@@ -10,7 +10,7 @@
         public int Humor { get; set; }
         public DateTime DataNascimento { get; set; }
 
-        public Pokemon()
+        public Mascote()
         {
             Random valorRandomico = new();
             Alimentacao = valorRandomico.Next(2, 10);

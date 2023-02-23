@@ -6,14 +6,14 @@ namespace BichinhoVirtual.Services
 {
     public class BichinhoVirtualService
     {
-        public static Pokemons? ListarEspecies()
+        public static Mascotes? ListarEspecies()
         {
             try
             {
                 var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/");
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 { 
-                    return JsonConvert.DeserializeObject<Pokemons>(response.Content);
+                    return JsonConvert.DeserializeObject<Mascotes>(response.Content);
                 }
                 else
                 {
@@ -28,10 +28,10 @@ namespace BichinhoVirtual.Services
             }
         }
 
-        public static Pokemon? BuscarCaracteristicasPorEspecie(string? especieMascote)
+        public static Mascote? BuscarCaracteristicasPorEspecie(string? especieMascote)
         {
             var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/{especieMascote.ToLower()}");
-            return JsonConvert.DeserializeObject<Pokemon>(response.Content);
+            return JsonConvert.DeserializeObject<Mascote>(response.Content);
         }
         public static RestResponse ChamarAPI(string url)
         {

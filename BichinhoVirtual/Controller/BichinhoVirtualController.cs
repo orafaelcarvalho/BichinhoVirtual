@@ -9,7 +9,7 @@ namespace BichinhoVirtual.Controller
         public void JogoBichinhoVirtual()
         {
             BichinhoVirtualView Mensagens = new BichinhoVirtualView();
-            List<Pokemon> MascotesAdotados = new List<Pokemon>();
+            List<Mascote> MascotesAdotados = new List<Mascote>();
 
             string opcaoUsuario;
             int jogar = 1;
@@ -24,7 +24,7 @@ namespace BichinhoVirtual.Controller
                     case "1":
                         string opcaoUsuarioSubMenu = "1";
                                                 
-                        Pokemons especies = BichinhoVirtualService.ListarEspecies();
+                        Mascotes especies = BichinhoVirtualService.ListarEspecies();
                         Mensagens.MenuAdocao(especies);
                         
                         string especieMascote = Console.ReadLine().ToUpper();
@@ -38,18 +38,18 @@ namespace BichinhoVirtual.Controller
 
                                 opcaoUsuarioSubMenu = Console.ReadLine();
 
-                                Pokemon pokemon = new Pokemon();
+                                Mascote mascote = new Mascote();
 
                                 switch (opcaoUsuarioSubMenu)
                                 {
                                     case "1":
-                                        pokemon = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
-                                        Mensagens.ExibirDetalhesMascote(especieMascote, pokemon);
+                                        mascote = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
+                                        Mensagens.ExibirDetalhesMascote(especieMascote, mascote);
                                         Console.ReadLine();
                                         break;
                                     case "2":
-                                        pokemon = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
-                                        MascotesAdotados.Add(pokemon);
+                                        mascote = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
+                                        MascotesAdotados.Add(mascote);
                                         Mensagens.ExibirMensagemAdocaoConcluida();
                                         opcaoUsuario = "3";
                                         Console.ReadLine();

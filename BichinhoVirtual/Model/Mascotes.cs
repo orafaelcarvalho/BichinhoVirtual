@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BichinhoVirtual.Model
 {
-    public class Pokemons
+    public class Mascotes
     {
         public int count { get; set; }
         public object previous { get; set; }
-        public List<Pokemon> results { get; set; }
+        public List<Mascote> results { get; set; }
     }
 }
