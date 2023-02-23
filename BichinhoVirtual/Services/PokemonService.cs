@@ -11,7 +11,7 @@ namespace BichinhoVirtual.Services
 {
     public class PokemonService
     {
-        public static Pokemons? ListarOpcoesEspecies()
+        public static Pokemons? ListarEspecies()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace BichinhoVirtual.Services
 
         public static Pokemon? BuscarCaracteristicasPorEspecie(string? especieMascote)
         {
-            var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/{especieMascote}");
+            var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/{especieMascote.ToLower()}");
             return JsonConvert.DeserializeObject<Pokemon>(response.Content);
         }
         public static RestResponse ChamarAPI(string url)
