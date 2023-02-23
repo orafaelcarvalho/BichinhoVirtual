@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace BichinhoVirtual.Services
 {
-    public class PokemonService
+    public class BichinhoVirtualService
     {
         public static Pokemons? ListarEspecies()
         {
