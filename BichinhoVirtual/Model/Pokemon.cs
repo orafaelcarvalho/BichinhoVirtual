@@ -10,13 +10,13 @@
         public int Humor { get; set; }
         public DateTime DataNascimento { get; set; }
 
-        //public Pokemon()
-        //{
-        //    Random valorRandomico = new();
-        //    Alimentacao = valorRandomico.Next(2, 10);
-        //    Humor = valorRandomico.Next(2, 10);
-        //    DataNascimento = DateTime.Now;
-        //}
+        public Pokemon()
+        {
+            Random valorRandomico = new();
+            Alimentacao = valorRandomico.Next(2, 10);
+            Humor = valorRandomico.Next(2, 10);
+            DataNascimento = DateTime.Now;
+        }
 
         public bool VerificarFome()
         {

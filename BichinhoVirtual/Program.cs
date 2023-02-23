@@ -34,7 +34,7 @@ public class Program
                     string especieMascote;
 
                     Console.Clear();
-                    Console.WriteLine("=== Lista de espécies disponíveis: ===");
+                    Console.WriteLine("=== LISTA DE ESPÉCIES DISPONÍVEIS: ===");
 
                     var response = PokemonService.ListarEspecies();
                     Pokemons especies = response;
@@ -44,7 +44,7 @@ public class Program
                         Console.WriteLine(pokemon.name.ToUpper());
                     }
 
-                    Console.WriteLine("\n=== Escreva o nome da espécie do seu interesse: ===");
+                    Console.WriteLine("\n=== ESCREVA O NOME DA ESPÉCIE DO SEU INTERESSE: ===");
                     especieMascote = Console.ReadLine().ToUpper();
                     Console.WriteLine();
 
@@ -70,11 +70,15 @@ public class Program
                                     Console.WriteLine($"=== DETALHES DO POKEMON {especieMascote} ===");
                                     Console.WriteLine("Altura: " + pokemon.height);
                                     Console.WriteLine("Peso: " + pokemon.weight);
-                                    Console.WriteLine("Habilidades: ");
+                                    Console.Write("Habilidades: ");
+                                    string habilidades = "";
                                     foreach (Abilities habilidade in pokemon.abilities)
                                     {
-                                        Console.WriteLine(habilidade.ability.name.ToUpper() + " ");
+                                        habilidades = habilidades + habilidade.ability.name.ToUpper() + ", ";
                                     }
+                                    habilidades = habilidades.Remove(habilidades.Length -2);
+                                    Console.WriteLine(habilidades);
+
                                     Console.WriteLine("\n=== APERTE ENTER PARA VOLTAR AO MENU ANTERIOR ===");
                                     Console.ReadLine();
                                     break;
@@ -93,14 +97,14 @@ public class Program
                                     opcaoUsuario = "3";
                                     break;
                                 default:
-                                    Console.WriteLine("Opção Inválida! Tente Novamente: ");
+                                    Console.WriteLine("=== OPÇÃO INVÁLIDA! TENTE NOVAMENTE ===");
                                     break;
                             }
                         }
                     }
                     else
                     {
-                        Console.WriteLine("=== Espécie informada não existe, favor digitar o nome de uma espécie da lista! ===");
+                        Console.WriteLine("=== ESPÉCIE INFORMADA NÃO EXISTE, FAVOR DIGITAR O NOME DE UMA ESPÉCIE DA LISTA! ===");
                         Console.ReadKey();
                     }                    
                     break;
@@ -108,7 +112,7 @@ public class Program
                     jogar = 0;
                     break;
                 default:
-                    Console.WriteLine("Opção Inválida! Tente Novamente. ");
+                    Console.WriteLine("=== OPÇÃO INVÁLIDA! TENTE NOVAMENTE ===");
                     break;
             }
         }
