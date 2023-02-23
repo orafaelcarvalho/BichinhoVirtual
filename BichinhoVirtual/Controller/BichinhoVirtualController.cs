@@ -9,7 +9,7 @@ namespace BichinhoVirtual.Controller
         public void JogoBichinhoVirtual()
         {
             BichinhoVirtualView Mensagens = new BichinhoVirtualView();
-            List<Mascote> MascotesAdotados = new List<Mascote>();
+            List<Mascote> mascotesAdotados = new List<Mascote>();
 
             string opcaoUsuario;
             int jogar = 1;
@@ -44,12 +44,12 @@ namespace BichinhoVirtual.Controller
                                 {
                                     case "1":
                                         mascote = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
-                                        Mensagens.ExibirDetalhesMascote(especieMascote, mascote);
+                                        Mensagens.ExibirDetalhesMascote(mascote);
                                         Console.ReadLine();
                                         break;
                                     case "2":
                                         mascote = BichinhoVirtualService.BuscarCaracteristicasPorEspecie(especieMascote);
-                                        MascotesAdotados.Add(mascote);
+                                        mascotesAdotados.Add(mascote);
                                         Mensagens.ExibirMensagemAdocaoConcluida();
                                         opcaoUsuario = "3";
                                         Console.ReadLine();
@@ -70,6 +70,10 @@ namespace BichinhoVirtual.Controller
                             Mensagens.OpcaoInvalida("especie");
                             Console.ReadKey();
                         }
+                        break;
+                    case "2":
+                        Mensagens.ExibirMascotesAdotados(mascotesAdotados);
+                        Console.ReadKey();
                         break;
                     case "3":
                         jogar = 0;
