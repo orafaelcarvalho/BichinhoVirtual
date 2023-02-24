@@ -60,7 +60,7 @@ namespace BichinhoVirtual.View
         public void ExibirDetalhesMascote(Mascote mascote)
         {
             Console.Clear();
-            Console.WriteLine($"--- DETALHES DO MASCOTE {mascote.name.ToUpper()}");
+            Console.WriteLine($"\n--- DETALHES DO MASCOTE {mascote.name.ToUpper()}");
             Console.WriteLine("Altura: " + mascote.height);
             Console.WriteLine("Peso: " + mascote.weight);
             Console.Write("Habilidades: ");
