@@ -50,8 +50,7 @@ namespace BichinhoVirtual.View
         public void MenuMascote(string especieMascote)
         {
             Console.Clear();
-            Console.WriteLine("\n--- ÓTIMA ESCOLHA!");           
-
+            Console.WriteLine("\n--- ÓTIMA ESCOLHA!");
             Console.WriteLine($"1 - SABER MAIS SOBRE O {especieMascote}");
             Console.WriteLine($"2 - ADOTAR {especieMascote}");
             Console.WriteLine($"3 - VOLTAR");
@@ -108,7 +107,7 @@ namespace BichinhoVirtual.View
         internal void ExibirMascotesAdotados(List<Mascote> mascotesAdotados)
         {
             Console.Clear();
-            Console.WriteLine("--- MASCOTES ADOTADOS\n");
+            Console.WriteLine($"\n--- MASCOTES ADOTADOS - VOCÊ POSSUI {mascotesAdotados.Count} MASCOTE(S)");
             foreach (var item in mascotesAdotados)
             {
                 Console.WriteLine($"\n--- DETALHES DO MASCOTE {item.name.ToUpper()}");
