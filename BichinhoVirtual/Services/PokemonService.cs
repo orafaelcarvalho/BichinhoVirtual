@@ -4,16 +4,16 @@ using RestSharp;
 
 namespace BichinhoVirtual.Services
 {
-    public class BichinhoVirtualService
+    public class PokemonService
     {
-        public static Mascotes? ListarEspecies()
+        public static Pokemons? ListarEspecies()
         {
             try
             {
                 var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/");
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 { 
-                    return JsonConvert.DeserializeObject<Mascotes>(response.Content);
+                    return JsonConvert.DeserializeObject<Pokemons>(response.Content);
                 }
                 else
                 {
@@ -28,10 +28,10 @@ namespace BichinhoVirtual.Services
             }
         }
 
-        public static Mascote? BuscarCaracteristicasPorEspecie(string? especieMascote)
+        public static Pokemon? BuscarCaracteristicasPorEspecie(string? especiePokemon)
         {
-            var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/{especieMascote.ToLower()}");
-            return JsonConvert.DeserializeObject<Mascote>(response.Content);
+            var response = ChamarAPI($"https://pokeapi.co/api/v2/pokemon/{especiePokemon.ToLower()}");
+            return JsonConvert.DeserializeObject<Pokemon>(response.Content);
         }
         public static RestResponse ChamarAPI(string url)
         {

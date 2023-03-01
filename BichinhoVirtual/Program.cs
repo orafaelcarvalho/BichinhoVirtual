@@ -1,5 +1,6 @@
 ﻿using BichinhoVirtual.Controller;
 using BichinhoVirtual.View;
+using System.Reflection;
 
 public class Program
 {
